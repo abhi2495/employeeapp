@@ -1,0 +1,36 @@
+server.port: 8080
+
+database: 
+  config:
+          driverClassName: com.mysql.cj.jdbc.Driver
+          password: password
+          #url: "jdbc:mysql://172.30.244.210:3306/sampledb"
+          url: "jdbc:mysql://127.0.0.1:3306/sampledb"
+          username: admin
+          
+spring:
+  application:
+     name: employeeservice
+     
+eureka:
+  instance:
+    statusPageUrlPath: /manage/info
+    healthCheckUrlPath: /manage/health
+    # nonSecurePort: 80
+    # hostname: employeeapp-insurance-system.ose-elr-dmz.optum.com
+    # instanceId: employeeapp-insurance-system.ose-elr-dmz.optum.com
+  client:
+    serviceUrl:
+      #defaultZone: http://eureka1-erlinktest.ose.optum.com/eureka/v2/,http://eureka2-erlinktest.ose.optum.com/eureka/v2/
+      defaultZone: http://localhost:8761/eureka/
+    enabled: true
+
+troublemaker:
+   client:
+      token: docvault-troublemaker-token-123
+      
+hibernate.dialect: org.hibernate.dialect.MySQLDialect
+hibernate.generate_statistics: false
+hibernate.hbm2ddl.auto: update
+hibernate.show_sql: true  
+
